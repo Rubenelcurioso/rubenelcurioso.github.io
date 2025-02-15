@@ -1,4 +1,61 @@
 /* Fallout Terminal CSS */
+/* Header Styles */
+.terminal-header {
+  background-color: #001100;
+  border-bottom: 2px solid #20C20E;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(32, 194, 14, 0.3);
+}
+
+.terminal-header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.terminal-header nav a {
+  color: #20C20E;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.terminal-header nav a:hover {
+  text-shadow: 0 0 10px #20C20E;
+  color: #eeff00;
+}
+
+/* Footer Styles */
+.terminal-footer {
+  background-color: #001100;
+  border-top: 2px solid #20C20E;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(32, 194, 14, 0.3);
+}
+
+.terminal-footer .footer-content {
+  color: #20C20E;
+}
+
+.terminal-footer a {
+  color: #20C20E;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.terminal-footer a:hover {
+  color: #eeff00;
+  text-shadow: 0 0 10px #20C20E;
+}
+
 body {
   background-color: #001100;
   color: #20C20E;
@@ -69,4 +126,45 @@ body {
 
 a {
   color: #eeff00;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+}
+
+.wrapper {
+  flex: 1;
+  padding: 1rem;
+  position: relative;
+}
+
+.wrapper:first-child::after {
+  content: '';
+  position: absolute;
+  right: -1rem;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #20C20E,
+    #20C20E,
+    transparent
+  );
+  box-shadow: 0 0 15px #20C20E;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
