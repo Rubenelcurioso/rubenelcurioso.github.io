@@ -6,9 +6,9 @@ layout: default
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#timeline">Experience</a></li>
+      <li><a href="#blue-team">Defense</a></li>
+      <li><a href="#red-team">Offense</a></li>
+      <li><a href="#grc">Strategy (GRC)</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -17,176 +17,125 @@ layout: default
 
 <div class="terminal" id="home">
   <div class="hero-section">
-    <h1 class="typing">$ ./rubenelcurioso.sh</h1>
+    <h1 class="typing">$ ./ruben_rosales.sh</h1>
     <div class="hero-content">
-      <h2 class="main-headline">Software Engineer & Cybersecurity Enthusiast</h2>
-      <p class="hero-description">Building secure, scalable digital solutions with expertise in Software Engineering</p>
+      <h2 class="main-headline">Hi, I'm Rubén Rosales.</h2>
+      <h2 class="main-headline">I secure modern infrastructures from every angle.</h2>
+      <p class="hero-description">As a Cybersecurity Engineer, I bridge the gap between robust network defense, offensive vulnerability assessment, and strategic business compliance.</p>
       <div class="hero-stats">
-        <span class="stat">🎓 CS Graduate</span>
-        <span class="stat">🔐 Security Enthusiast</span>
-        <span class="stat">⚡ AI Trendsetter</span>
+        <a href="#projects" class="stat" style="text-decoration: none; cursor: pointer;">🔍 Explore my work</a>
+        <a href="https://www.linkedin.com/in/rub%C3%A9n-rosales-01b114356/" class="stat" style="text-decoration: none; cursor: pointer;" target="_blank">📄 View Resume</a>
       </div>
     </div>
   </div>
 
-  <section id="about" class="content-section">
-    <h2 class="section-title">> About me</h2>
+  <section id="blue-team" class="content-section">
+    <h2 class="section-title">> Blue Team & SecOps (La Defensa)</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>Passionate Software Engineer with a proven track record of delivering innovative digital solutions across Education and other sectors. Currently architecting and implementing cutting-edge software systems at <strong>APDI GROUP</strong>.</p>
-        <p>Specialized in creating robust, secure applications while maintaining a curious mindset that drives continuous learning and technological exploration.</p>
+        <h3 style="color: #eeff00; margin-bottom: 1rem;">Building resilient architectures and defending the perimeter.</h3>
+        <p>My core expertise lies in designing networks that are secure by default. I focus on reducing the attack surface and maintaining business continuity.</p>
+        <div style="margin-top: 2rem;">
+          <h4 style="color: #20C20E; margin-bottom: 0.5rem;">Key Achievements:</h4>
+          <ul>
+            <li style="margin-bottom: 0.5rem;">Architected and deployed secure network infrastructures (SOHO to Organizational) using advanced VLAN segmentation and load-balanced firewalls.</li>
+            <li style="margin-bottom: 0.5rem;">Applied rigorous hardening techniques and strict access controls across internal platforms to mitigate automated threats.</li>
+            <li style="margin-bottom: 0.5rem;">Automated critical security processes (triage, incident management) using Python and Bash, drastically reducing human error and response times.</li>
+          </ul>
+        </div>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-item">
-          <span class="highlight-number">1+</span>
-          <span class="highlight-text">Years experience</span>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-number">2+</span>
-          <span class="highlight-text">Certifications</span>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-number">∞</span>
-          <span class="highlight-text">Curiosity level</span>
+      <div class="skill-category">
+        <h3>🛡️ Tech Stack</h3>
+        <div class="skill-badges">
+          <span class="skill-badge">RouterOS</span>
+          <span class="skill-badge">Mikrotik</span>
+          <span class="skill-badge">Windows Server</span>
+          <span class="skill-badge">Linux</span>
+          <span class="skill-badge">HAProxy</span>
+          <span class="skill-badge">Grafana</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="content-section">
-    <h2 class="section-title">> Technical arsenal</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>💻 Software Engineering</h3>
-        <div class="skill-badges">
-          <span class="skill-badge">PHP</span>
-          <span class="skill-badge">Java</span>
-          <span class="skill-badge">Python</span>
-          <span class="skill-badge">C/C++</span>
-          <span class="skill-badge">CUDA</span>
-          <span class="skill-badge">JavaScript</span>
-          <span class="skill-badge">Software Architecture</span>
-          <span class="skill-badge">System Design</span>
+  <section id="red-team" class="content-section">
+    <h2 class="section-title">> Penetration Testing & Vuln Assessment (El Ataque)</h2>
+    <div class="about-grid" style="direction: rtl;">
+      <div class="about-text" style="direction: ltr;">
+        <h3 style="color: #eeff00; margin-bottom: 1rem;">Thinking like an attacker to fortify defenses.</h3>
+        <p>You can't protect what you don't know how to break. I actively search for weaknesses in corporate environments before threat actors do.</p>
+        <div style="margin-top: 2rem;">
+          <h4 style="color: #20C20E; margin-bottom: 0.5rem;">Key Achievements:</h4>
+          <ul>
+            <li style="margin-bottom: 0.5rem;">Mapped organizational attack surfaces, identifying routing vulnerabilities, misconfigurations, and lateral movement vectors.</li>
+            <li style="margin-bottom: 0.5rem;">Assessed application security controls by actively testing input sanitization mechanisms to understand and prevent injection attacks (SQLi, XSS, CSRF).</li>
+            <li style="margin-bottom: 0.5rem;">Analyzed Active Directory environments to identify credential harvesting vectors and common protocol exploitations.</li>
+          </ul>
         </div>
       </div>
-      <div class="skill-category">
-        <h3>🔐 Cybersecurity</h3>
+      <div class="skill-category" style="direction: ltr;">
+        <h3>⚔️ Tech Stack</h3>
         <div class="skill-badges">
-          <span class="skill-badge">Reverse Engineering</span>
-          <span class="skill-badge">Malware Analysis</span>
-          <span class="skill-badge">Network Security</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>☁️ Cloud & AI</h3>
-        <div class="skill-badges">
-          <span class="skill-badge azure">Azure AI</span>
-          <span class="skill-badge">GPT/LLMs</span>
-          <span class="skill-badge">Cloud Architecture</span>
+          <span class="skill-badge">Kali/Parrot</span>
+          <span class="skill-badge">BurpSuite</span>
+          <span class="skill-badge">Metasploit</span>
+          <span class="skill-badge">Nmap</span>
+          <span class="skill-badge">Ghidra/IDA</span>
+          <span class="skill-badge">OSINT</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="timeline" class="content-section">
-    <h2 class="section-title">> Career</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Software Analyst</h3>
-          <h4>APDI GROUP</h4>
-          <span class="timeline-date">2024 - Present</span>
-          <p>Implementing and developing digital solutions for clients across Education and other sectors. Leading software architecture decisions and ensuring scalable, maintainable codebases.</p>
+  <section id="grc" class="content-section">
+    <h2 class="section-title">> GRC & Security Consulting (El Negocio)</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3 style="color: #eeff00; margin-bottom: 1rem;">Aligning technical security with business goals and compliance.</h3>
+        <p>I translate complex technical risks into actionable business strategies, ensuring adherence to global frameworks and regulations.</p>
+        <div style="margin-top: 2rem;">
+          <h4 style="color: #20C20E; margin-bottom: 0.5rem;">Key Achievements:</h4>
+          <ul>
+            <li style="margin-bottom: 0.5rem;">Established baseline security controls to mitigate operational risk and align infrastructure with corporate security policies.</li>
+            <li style="margin-bottom: 0.5rem;">Implemented comprehensive data protection mechanisms, including encryption at rest for high-volume databases, ensuring GDPR compliance.</li>
+            <li style="margin-bottom: 0.5rem;">Improved overall system availability and business continuity through the strategic automation of critical security workflows.</li>
+          </ul>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Azure AI Fundamentals Certification</h3>
-          <h4>Microsoft</h4>
-          <span class="timeline-date">2024</span>
-          <p>Achieved AI-900 certification, demonstrating expertise in Azure AI services and machine learning fundamentals.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>ChatGPT & LLM Specialist Certification</h3>
-          <h4>Professional Development</h4>
-          <span class="timeline-date">2024</span>
-          <p>Certified in ChatGPT and Large Language Models usage and development, staying at the forefront of AI technology.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Computer Science Degree</h3>
-          <h4>ETSIIT - University of Granada</h4>
-          <span class="timeline-date">2020 - 2024</span>
-          <p>Graduated with specialization in Software Engineering. Developed strong foundation in algorithms, data structures, and software design patterns.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>English Proficiency Certification</h3>
-          <h4>B2 Level</h4>
-          <span class="timeline-date">2023</span>
-          <p>Achieved B2 proficiency level in English, enabling effective communication in international development teams.</p>
+      <div class="skill-category">
+        <h3>📋 Tech Stack</h3>
+        <div class="skill-badges">
+          <span class="skill-badge">ISO 27001</span>
+          <span class="skill-badge">NIST</span>
+          <span class="skill-badge">GDPR/LOPDGDD</span>
+          <span class="skill-badge">NIS2</span>
+          <span class="skill-badge">Risk Management</span>
         </div>
       </div>
     </div>
   </section>
 
   <section id="projects" class="content-section">
-    <h2 class="section-title">> Featured Projects</h2>
+    <h2 class="section-title">> The "Security-First" Approach</h2>
     <div class="projects-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" style="grid-column: 1 / -1;">
         <div class="project-header">
-          <h3>🔐 Aion - Open source task & project manager</h3>
+          <h3>🔐 Featured Project: Minimalist Task Manager</h3>
           <span class="project-status">Active</span>
         </div>
-        <p>Open source, robust, minimal project and task management system.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Django</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Vue</span>
-          <span class="tech-tag">Quasar</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">PostgreSQL</span>
-        </div>
+        <p>An open-source, enterprise-ready application built from the ground up with security in mind. This project showcases my 360-degree approach:</p>
+        <ul style="margin-top: 1rem; color: #20C20E;">
+            <li style="margin-bottom: 0.5rem;"><strong>The Build (Blue):</strong> Designed for easy deployment with progressive system hardening and strict access control architectures.</li>
+            <li style="margin-bottom: 0.5rem;"><strong>The Test (Red):</strong> Actively mitigated OWASP Top 10 vulnerabilities during the development phase.</li>
+            <li style="margin-bottom: 0.5rem;"><strong>The Compliance (GRC):</strong> Ensured data integrity, traceability, and confidentiality through secure design principles.</li>
+        </ul>
       </div>
-      <div class="project-card">
+      <div class="project-card" style="grid-column: 1 / -1;">
         <div class="project-header">
-          <h3>🎓 Educational Platform Solutions</h3>
-          <span class="project-status">Client Work</span>
+          <h3>🛡️ Moodle Security Plugin</h3>
+          <span class="project-status">Deployed</span>
         </div>
-        <p>Scalable digital learning platforms developed for educational institutions, featuring real-time collaboration and adaptive learning.</p>
-        <div class="project-tech">
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">Laravel</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Cloud</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-header">
-          <h3>🔐 Malware Analysis Framework</h3>
-          <span class="project-status">Research</span>
-        </div>
-        <p>Leveraging reverse engineering malware analysis and threat detection. Implements dynamic and static analysis techniques.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Assembly</span>
-          <span class="tech-tag">Ghidra</span>
-          <span class="tech-tag">Malware Analysis</span>
-          <span class="tech-tag">Cybersecurity</span>
-        </div>
+        <p>Developed and successfully implemented a custom Captcha plugin to meet a genuine professional need, protecting organizational assets from automated abuse.</p>
       </div>
     </div>
   </section>
@@ -195,28 +144,25 @@ layout: default
     <h2 class="section-title">> Get In Touch</h2>
     <div class="contact-grid">
       <div class="contact-info">
-        <p>Ready to collaborate on innovative projects or discuss cybersecurity challenges? Let's connect!</p>
+        <h3 style="color: #eeff00; margin-bottom: 1rem;">Let's secure your next project.</h3>
+        <p>Whether you need a robust network architecture, a vulnerability assessment, or guidance on IT compliance, I'm ready to help.</p>
         <div class="contact-methods">
-          <a href="https://github.com/rubenelcurioso" class="contact-link">
-            <span class="contact-icon">📦</span>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/rub%C3%A9n-rosales-01b114356/" class="contact-link">
+          <a href="https://www.linkedin.com/in/rub%C3%A9n-rosales-01b114356/" class="contact-link" target="_blank">
             <span class="contact-icon">💼</span>
-            <span>LinkedIn</span>
+            <span>Connect on LinkedIn</span>
           </a>
           <a href="mailto:rrtosales9@gmail.com" class="contact-link">
             <span class="contact-icon">📧</span>
-            <span>Email</span>
+            <span>Send me an Email</span>
           </a>
         </div>
       </div>
       <div class="contact-cta">
         <div class="terminal-command">
           <span class="prompt">$</span>
-          <span class="command">git clone https://github.com/rubenelcurioso</span>
+          <span class="command">whoami</span>
         </div>
-        <p>Exploring new opportunities in Software Engineering and Cybersecurity</p>
+        <p>Rubén Rosales - Cybersecurity Engineer</p>
       </div>
     </div>
   </section>
@@ -224,6 +170,6 @@ layout: default
 
 <footer class="terminal-footer">
   <div class="footer-content">
-    <p>&copy; 2025 Rubenelcurioso | Building the future, one line of code at a time</p>
+    <p>&copy; 2025 Rubén Rosales | Building the future, one line of code at a time</p>
   </div>
 </footer>
