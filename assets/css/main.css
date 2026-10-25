@@ -64,13 +64,34 @@ h1, h2, h3, h4 { font-weight: 700; }
   box-shadow: var(--glow-bar);
 }
 
-.terminal-header nav ul {
+.terminal-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* Console box: the nav reads like tab-completion candidates after "cd ~/" */
+.console {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  background: var(--void);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  padding: 0.5rem 0.9rem;
+}
+
+.console-prompt { color: var(--ink-muted); user-select: none; white-space: nowrap; }
+
+.console-options {
   list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 0.25rem 1.5rem;
   margin: 0;
   padding: 0;
 }
@@ -79,8 +100,7 @@ h1, h2, h3, h4 { font-weight: 700; }
   color: var(--phosphor);
   text-decoration: none;
   font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   transition: color 0.2s ease;
 }
 
@@ -91,13 +111,13 @@ h1, h2, h3, h4 { font-weight: 700; }
 }
 
 .theme-toggle {
-  background: transparent;
   color: var(--phosphor);
   border: 1px solid var(--rule);
-  border-radius: 15px;
+  background: var(--void);
+  border-radius: 5px;
   font: inherit;
-  font-size: 0.8rem;
-  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
   cursor: pointer;
 }
 
@@ -445,7 +465,6 @@ h1, h2, h3, h4 { font-weight: 700; }
   .timeline-dot { left: 20px; transform: none; }
   .timeline-content { max-width: 100%; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .terminal-header nav ul { gap: 1rem; }
   .projects-grid { grid-template-columns: 1fr; }
 }
 

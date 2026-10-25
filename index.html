@@ -3,16 +3,16 @@ layout: default
 ---
 
 <header class="terminal-header">
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#blue-team">Defense</a></li>
-      <li><a href="#red-team">Offense</a></li>
-      <li><a href="#grc">Strategy (GRC)</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch theme">Paper</button></li>
-    </ul>
+  <nav aria-label="Main">
+    <div class="console">
+      <span class="console-prompt" aria-hidden="true">&gt;_ cd ~/</span>
+      <ul class="console-options">
+        <li><a href="#blue-team" title="About me and my work">whoami/</a></li>
+        <li><a href="#projects" title="Projects">projects/</a></li>
+        <li><a href="/blog/" title="Blog">blog/</a></li>
+      </ul>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to paper theme">change_paper.sh</button>
   </nav>
 </header>
 
