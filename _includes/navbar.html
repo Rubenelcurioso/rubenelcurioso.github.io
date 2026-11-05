@@ -1,0 +1,14 @@
+<header class="terminal-header">
+  <nav aria-label="Main">
+    <div class="console">
+      <span class="console-prompt" aria-hidden="true">&gt;_ cd ~/</span>
+      <ul class="console-options">
+        <li><a href="/" title="Home"{% if page.url == '/' %} aria-current="page"{% endif %}>home/</a></li>
+        <li><a href="/whoami/" title="WhoAmI"{% if page.url == '/whoami/' %} aria-current="page"{% endif %}>whoami/</a></li>
+        <li><a href="/projects/" title="Projects"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>projects/</a></li>
+        <li><a href="/blog/" title="Blog"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>blog/</a></li>
+      </ul>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to paper theme">change_paper.sh</button>
+  </nav>
+</header>
