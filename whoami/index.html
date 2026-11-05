@@ -9,20 +9,49 @@ permalink: /whoami/
 <div class="terminal" id="home">
   <section id="roadmap" class="content-section">
     <h2 class="section-title">> Knowledge Roadmap</h2>
-    <figure class="roadmap" id="roadmap-chart">
-      <svg viewBox="0 0 900 540" role="img" aria-labelledby="roadmap-title roadmap-desc">
+    <figure class="roadmap" id="roadmap-chart" tabindex="0" aria-label="Knowledge roadmap chart (scrollable on small screens)">
+      <svg viewBox="0 -30 900 570" role="img" aria-labelledby="roadmap-title roadmap-desc">
         <title id="roadmap-title">Knowledge over time</title>
-        <desc id="roadmap-desc">Knowledge grows from 2020 through university fundamentals (2024), infrastructure security and the current SOC Analyst L1 role (2026). The next goal is DFIR and the final goal is Malware Analyst. A note states there is no cap limit to knowledge.</desc>
+        <desc id="roadmap-desc">Knowledge grows from 2020, through university fundamentals (2024) and infrastructure security (2026), up to the current role: SOC Analyst L1. The next goal is DFIR and the final goal is Malware Analyst.</desc>
         <defs>
           <pattern id="rm-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <line x1="0" y1="0" x2="0" y2="6" class="rm-hatch-line" stroke-width="2"/>
           </pattern>
         </defs>
 
-        <g class="rm-axes">
-          <path d="M70 450 H860 M850 444 L860 450 L850 456" />
-          <path d="M70 450 V40 M64 50 L70 40 L76 50" />
+        <!-- X axis -->
+        <path class="rm-axis rm-xaxis" pathLength="1" d="M70 450 H860 M850 444 L860 450 L850 456" />
+        <!-- Y axis: drawn by the pixel rocket -->
+        <path class="rm-axis rm-yaxis" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" d="M70 450 V58">
+          <animate id="rm-y-anim" attributeName="stroke-dashoffset" values="1;0" dur="1.6s" begin="indefinite" fill="freeze"
+                   calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1" />
+        </path>
+        <g class="rm-rocket" transform="translate(58 25)" aria-hidden="true">
+          <animateTransform attributeName="transform" type="translate" values="58 417;58 25" dur="1.6s" begin="rm-y-anim.begin" fill="freeze"
+                            calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1" />
+          <rect class="px-nose" x="9" y="0" width="6" height="3" />
+          <rect class="px-body" x="6" y="3" width="12" height="3" />
+          <rect class="px-body" x="6" y="6" width="3" height="6" />
+          <rect class="px-body" x="15" y="6" width="3" height="6" />
+          <rect class="px-win" x="9" y="6" width="6" height="6" />
+          <rect class="px-body" x="6" y="12" width="12" height="3" />
+          <rect class="px-body" x="3" y="15" width="18" height="3" />
+          <rect class="px-fin" x="0" y="18" width="6" height="3" />
+          <rect class="px-body" x="9" y="18" width="6" height="6" />
+          <rect class="px-fin" x="18" y="18" width="6" height="3" />
+          <rect class="px-fin" x="0" y="21" width="3" height="3" />
+          <rect class="px-fin" x="21" y="21" width="3" height="3" />
+          <g class="px-flame-a">
+            <rect x="9" y="24" width="6" height="3" />
+            <rect x="6" y="27" width="3" height="3" />
+            <rect x="15" y="27" width="3" height="3" />
+          </g>
+          <g class="px-flame-b">
+            <rect x="9" y="24" width="6" height="6" />
+            <rect x="9" y="30" width="3" height="3" />
+          </g>
         </g>
+
         <text class="rm-label" x="20" y="250" transform="rotate(-90 20 250)" text-anchor="middle">Knowledge</text>
         <text class="rm-label" x="470" y="505" text-anchor="middle">Years</text>
         <text class="rm-label" x="70" y="474" text-anchor="middle">2020</text>
@@ -32,44 +61,57 @@ permalink: /whoami/
         <line class="rm-uni" x1="270" y1="60" x2="270" y2="490" />
         <text class="rm-uni-label" x="270" y="528" text-anchor="middle">University</text>
 
+        <!-- Achieved path -->
         <path class="rm-line rm-done s1" pathLength="1" d="M70 450 C 150 450, 210 445, 270 385" />
         <path class="rm-line rm-done s2" pathLength="1" d="M270 385 C 320 350, 370 330, 420 305" />
         <path class="rm-line rm-done s3" pathLength="1" d="M420 305 C 440 290, 475 285, 490 215" />
-        <path class="rm-line rm-goal s4" pathLength="1" d="M490 215 C 540 180, 590 190, 650 130" />
-        <path class="rm-line rm-goal s5" pathLength="1" d="M650 130 C 720 70, 760 90, 810 62" />
 
+        <!-- Goals path: faint track + a line being drawn towards DFIR and Malware Analyst -->
+        <path class="rm-goal-track rm-goals" d="M490 215 C 540 180, 590 190, 650 130 C 720 70, 760 90, 810 62" />
+        <path class="rm-goal-draw rm-goals" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"
+              d="M490 215 C 540 180, 590 190, 650 130 C 720 70, 760 90, 810 62">
+          <animate id="rm-goal-anim" attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.75;1"
+                   dur="5s" begin="indefinite" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.88;1"
+                   dur="5s" begin="rm-goal-anim.begin" repeatCount="indefinite" />
+        </path>
+        <circle class="rm-pen" r="5" cx="0" cy="0" opacity="0">
+          <animateMotion path="M490 215 C 540 180, 590 190, 650 130 C 720 70, 760 90, 810 62"
+                         keyPoints="0;1;1" keyTimes="0;0.75;1" calcMode="linear"
+                         dur="5s" begin="rm-goal-anim.begin" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.75;0.8;1"
+                   dur="5s" begin="rm-goal-anim.begin" repeatCount="indefinite" />
+        </circle>
+
+        <!-- Achieved milestones (labels sit above the line, on a halo) -->
         <circle class="rm-node rm-done n0" cx="70" cy="450" r="7" />
         <circle class="rm-node rm-done n1" cx="270" cy="385" r="9" />
-        <text class="rm-tag t1" x="300" y="420">Fundamentals</text>
+        <text class="rm-tag t1" x="256" y="368" text-anchor="end">Fundamentals</text>
         <circle class="rm-node rm-done n2" cx="420" cy="305" r="9" />
-        <text class="rm-tag t2" x="420" y="342" text-anchor="middle">Infrastructure</text>
-        <text class="rm-tag t2" x="420" y="360" text-anchor="middle">Security</text>
+        <text class="rm-tag t2" x="406" y="268" text-anchor="end">Infrastructure</text>
+        <text class="rm-tag t2" x="406" y="287" text-anchor="end">Security</text>
 
+        <!-- Current -->
         <g class="rm-current n3">
           <circle class="rm-pulse" cx="490" cy="215" r="12" />
           <circle class="rm-blink" cx="490" cy="215" r="12" />
         </g>
-        <text class="rm-tag rm-tag-current t3" x="455" y="190" text-anchor="end">Current</text>
-        <text class="rm-tag t3" x="472" y="250" text-anchor="end">SOC Analyst L1</text>
+        <text class="rm-tag rm-tag-current t3" x="466" y="164" text-anchor="end">Current</text>
+        <text class="rm-tag t3" x="466" y="186" text-anchor="end">SOC Analyst L1</text>
 
+        <!-- Next goal -->
         <g class="rm-goal-node n4" transform="translate(650 130)">
           <rect class="rm-diamond rm-next" x="-17" y="-17" width="34" height="34" transform="rotate(45)" />
         </g>
-        <text class="rm-tag rm-tag-goal t4" x="650" y="90" text-anchor="middle">DFIR</text>
-        <text class="rm-sub t4" x="650" y="172" text-anchor="middle">next goal</text>
+        <text class="rm-sub t4" x="630" y="84" text-anchor="end">next goal</text>
+        <text class="rm-tag rm-tag-goal t4" x="630" y="104" text-anchor="end">DFIR</text>
 
+        <!-- Final goal -->
         <g class="rm-goal-node n5" transform="translate(810 62)">
           <rect class="rm-diamond rm-final" x="-26" y="-26" width="52" height="52" transform="rotate(45)" />
         </g>
-        <text class="rm-tag rm-tag-goal t5" x="810" y="18" text-anchor="middle">Malware Analyst</text>
-        <text class="rm-sub t5" x="810" y="112" text-anchor="middle">final goal</text>
-
-        <g class="rm-note n6" transform="rotate(2 725 290)">
-          <rect x="640" y="240" width="170" height="100" rx="3" />
-          <text x="725" y="275" text-anchor="middle">Skyrocket</text>
-          <text x="725" y="295" text-anchor="middle">(no cap limit to</text>
-          <text x="725" y="315" text-anchor="middle">knowledge)</text>
-        </g>
+        <text class="rm-sub t5" x="764" y="22" text-anchor="end">final goal</text>
+        <text class="rm-tag rm-tag-goal rm-tag-final t5" x="764" y="42" text-anchor="end">Malware Analyst</text>
       </svg>
     </figure>
   </section>
@@ -180,9 +222,19 @@ permalink: /whoami/
   (function () {
     var el = document.getElementById('roadmap-chart');
     if (!el || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var yAxis = document.getElementById('rm-y-anim');
+    var goals = document.getElementById('rm-goal-anim');
+    var smil = yAxis && typeof yAxis.beginElement === 'function';
     el.classList.add('armed');
+    if (smil) el.classList.add('smil');
     new IntersectionObserver(function (entries, obs) {
-      if (entries[0].isIntersecting) { el.classList.add('in'); obs.disconnect(); }
-    }, { threshold: 0.35 }).observe(el);
+      if (!entries[0].isIntersecting) return;
+      obs.disconnect();
+      el.classList.add('in');
+      if (smil) {
+        yAxis.beginElement();         // rocket draws the Knowledge axis
+        goals.beginElementAt(4.2);    // then the line keeps drawing towards the goals
+      }
+    }, { threshold: 0.3 }).observe(el);
   })();
 </script>
