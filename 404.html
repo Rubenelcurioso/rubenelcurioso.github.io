@@ -1,0 +1,81 @@
+---
+layout: default
+title: "0x404"
+permalink: /404.html
+---
+
+<style>
+  .err-page {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  /* Big 0x404: slab, italic, cut into LED bars (IBM-logo style).
+     The bars stay fixed; a brightness wave sweeps left to right. */
+  .err-code {
+    margin: 0;
+    font-family: Rockwell, "Roboto Slab", "Courier New", Courier, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(4rem, 22vw, 15rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    padding: 0.04em 0.12em;
+    color: transparent;
+    background-image: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--phosphor) 22%, transparent) 0%,
+      color-mix(in srgb, var(--phosphor) 22%, transparent) 38%,
+      var(--phosphor) 50%,
+      color-mix(in srgb, var(--phosphor) 22%, transparent) 62%,
+      color-mix(in srgb, var(--phosphor) 22%, transparent) 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 0.075em, transparent 0.075em 0.1em);
+    mask-image: repeating-linear-gradient(180deg, #000 0 0.075em, transparent 0.075em 0.1em);
+    filter: drop-shadow(0 0 0.06em var(--phosphor-40));
+    animation: led-sweep 3.6s linear infinite;
+  }
+
+  @keyframes led-sweep {
+    from { background-position: 100% 0; }
+    to   { background-position: 0 0; }
+  }
+
+  .err-msg {
+    margin: 0;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-shadow: none;
+  }
+
+  .err-home {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .err-home:hover { color: var(--phosphor); border-bottom-color: var(--phosphor); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .err-code { animation: none; background-position: 50% 0; }
+  }
+</style>
+
+{% include navbar.html %}
+
+<main class="err-page">
+  <h1 class="err-code" aria-label="0x404">0x404</h1>
+  <p class="err-msg">Not found</p>
+  <a class="err-home" href="/">&gt;_ cd home/</a>
+</main>
