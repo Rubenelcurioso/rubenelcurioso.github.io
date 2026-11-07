@@ -13,40 +13,30 @@ permalink: /whoami/
       <svg viewBox="0 -30 900 570" role="img" aria-labelledby="roadmap-title roadmap-desc">
         <title id="roadmap-title">Knowledge over time</title>
         <desc id="roadmap-desc">Knowledge grows from 2020, through university fundamentals (2024) and infrastructure security (2026), up to the current role: SOC Analyst L1. The next goal is DFIR and the final goal is Malware Analyst.</desc>
-        <defs>
-          <pattern id="rm-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <line x1="0" y1="0" x2="0" y2="6" class="rm-hatch-line" stroke-width="2"/>
-          </pattern>
-        </defs>
-
         <!-- X axis -->
         <path class="rm-axis rm-xaxis" pathLength="1" d="M70 450 H860 M850 444 L860 450 L850 456" />
-        <!-- Y axis: drawn by the pixel rocket -->
-        <path class="rm-axis rm-yaxis" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" d="M70 450 V58">
-          <animate id="rm-y-anim" attributeName="stroke-dashoffset" values="1;0" dur="1.6s" begin="indefinite" fill="freeze"
-                   calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1" />
-        </path>
-        <g class="rm-rocket" transform="translate(58 25)" aria-hidden="true">
-          <animateTransform attributeName="transform" type="translate" values="58 417;58 25" dur="1.6s" begin="rm-y-anim.begin" fill="freeze"
-                            calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.2 1" />
-          <rect class="px-nose" x="9" y="0" width="6" height="3" />
-          <rect class="px-body" x="6" y="3" width="12" height="3" />
-          <rect class="px-body" x="6" y="6" width="3" height="6" />
-          <rect class="px-body" x="15" y="6" width="3" height="6" />
-          <rect class="px-win" x="9" y="6" width="6" height="6" />
-          <rect class="px-body" x="6" y="12" width="12" height="3" />
-          <rect class="px-body" x="3" y="15" width="18" height="3" />
-          <rect class="px-fin" x="0" y="18" width="6" height="3" />
-          <rect class="px-body" x="9" y="18" width="6" height="6" />
-          <rect class="px-fin" x="18" y="18" width="6" height="3" />
-          <rect class="px-fin" x="0" y="21" width="3" height="3" />
-          <rect class="px-fin" x="21" y="21" width="3" height="3" />
-          <g class="px-flame-a">
+        <!-- Y axis: drawn by the pixel rocket as it climbs (animated in JS) -->
+        <path class="rm-axis rm-yaxis" id="rm-yaxis" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0" d="M70 450 V58" />
+        <g class="rm-rocket" id="rm-rocket" transform="translate(58 25)" aria-hidden="true">
+          <g class="px">
+            <rect x="9" y="0" width="6" height="3" />
+            <rect x="6" y="3" width="12" height="3" />
+            <rect x="6" y="6" width="3" height="6" />
+            <rect x="15" y="6" width="3" height="6" />
+            <rect x="6" y="12" width="12" height="3" />
+            <rect x="3" y="15" width="18" height="3" />
+            <rect x="0" y="18" width="6" height="3" />
+            <rect x="9" y="18" width="6" height="6" />
+            <rect x="18" y="18" width="6" height="3" />
+            <rect x="0" y="21" width="3" height="3" />
+            <rect x="21" y="21" width="3" height="3" />
+          </g>
+          <g class="px-flame px-flame-a">
             <rect x="9" y="24" width="6" height="3" />
             <rect x="6" y="27" width="3" height="3" />
             <rect x="15" y="27" width="3" height="3" />
           </g>
-          <g class="px-flame-b">
+          <g class="px-flame px-flame-b">
             <rect x="9" y="24" width="6" height="6" />
             <rect x="9" y="30" width="3" height="3" />
           </g>
@@ -107,8 +97,35 @@ permalink: /whoami/
         <text class="rm-tag rm-tag-goal t4" x="630" y="104" text-anchor="end">DFIR</text>
 
         <!-- Final goal -->
-        <g class="rm-goal-node n5" transform="translate(810 62)">
-          <rect class="rm-diamond rm-final" x="-26" y="-26" width="52" height="52" transform="rotate(45)" />
+        <g class="rm-goal-node rm-spider n5" transform="translate(788 42)" aria-hidden="true">
+          <g class="px">
+            <rect x="0" y="0" width="4" height="4" />
+            <rect x="12" y="0" width="4" height="4" />
+            <rect x="28" y="0" width="4" height="4" />
+            <rect x="40" y="0" width="4" height="4" />
+            <rect x="4" y="4" width="4" height="4" />
+            <rect x="16" y="4" width="4" height="4" />
+            <rect x="24" y="4" width="4" height="4" />
+            <rect x="36" y="4" width="4" height="4" />
+            <rect x="8" y="8" width="4" height="4" />
+            <rect x="16" y="8" width="12" height="4" />
+            <rect x="32" y="8" width="4" height="4" />
+            <rect x="12" y="12" width="20" height="4" />
+            <rect x="0" y="16" width="16" height="4" />
+            <rect x="20" y="16" width="4" height="4" />
+            <rect x="28" y="16" width="16" height="4" />
+            <rect x="12" y="20" width="20" height="4" />
+            <rect x="8" y="24" width="28" height="4" />
+            <rect x="4" y="28" width="4" height="4" />
+            <rect x="16" y="28" width="12" height="4" />
+            <rect x="36" y="28" width="4" height="4" />
+            <rect x="0" y="32" width="4" height="4" />
+            <rect x="16" y="32" width="12" height="4" />
+            <rect x="40" y="32" width="4" height="4" />
+            <rect x="0" y="36" width="4" height="4" />
+            <rect x="20" y="36" width="4" height="4" />
+            <rect x="40" y="36" width="4" height="4" />
+          </g>
         </g>
         <text class="rm-sub t5" x="764" y="22" text-anchor="end">final goal</text>
         <text class="rm-tag rm-tag-goal rm-tag-final t5" x="764" y="42" text-anchor="end">Malware Analyst</text>
@@ -222,19 +239,40 @@ permalink: /whoami/
   (function () {
     var el = document.getElementById('roadmap-chart');
     if (!el || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var yAxis = document.getElementById('rm-y-anim');
+    var rocket = document.getElementById('rm-rocket');
+    var axis = document.getElementById('rm-yaxis');
     var goals = document.getElementById('rm-goal-anim');
-    var smil = yAxis && typeof yAxis.beginElement === 'function';
+    var smil = goals && typeof goals.beginElement === 'function';
+    var BOTTOM = 417, TOP = 25, DUR = 1800; // rocket top-left y: from the origin up to the arrow tip
+
+    function place(p) {
+      var y = BOTTOM - (BOTTOM - TOP) * p;
+      rocket.setAttribute('transform', 'translate(58 ' + y + ')');
+      axis.style.strokeDashoffset = String(1 - p); // the trail ends right under the rocket
+    }
+
+    function launch() {
+      var t0 = null;
+      place(0);
+      rocket.style.visibility = 'visible';
+      requestAnimationFrame(function step(ts) {
+        if (t0 === null) t0 = ts;
+        var t = Math.min(1, (ts - t0) / DUR);
+        place(t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2); // ease in-out
+        if (t < 1) requestAnimationFrame(step);
+      });
+    }
+
     el.classList.add('armed');
     if (smil) el.classList.add('smil');
+    place(0);
+    rocket.style.visibility = 'hidden';
     new IntersectionObserver(function (entries, obs) {
       if (!entries[0].isIntersecting) return;
       obs.disconnect();
       el.classList.add('in');
-      if (smil) {
-        yAxis.beginElement();         // rocket draws the Knowledge axis
-        goals.beginElementAt(4.2);    // then the line keeps drawing towards the goals
-      }
+      launch();                                // rocket climbs, drawing the Knowledge axis
+      if (smil) goals.beginElementAt(4.2);     // then the line keeps drawing towards the goals
     }, { threshold: 0.3 }).observe(el);
   })();
 </script>
