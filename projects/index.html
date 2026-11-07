@@ -9,21 +9,42 @@ permalink: /projects/
 <div class="terminal">
   <section id="projects" class="content-section">
     <h2 class="section-title">> The "Security-First" Approach</h2>
-    <div class="projects-grid">
-      <div class="project-card featured wide">
-        <div class="project-header">
-          <h3>🔐 Featured Project: Minimalist Task Manager</h3>
-          <span class="project-status">Active</span>
-        </div>
-        <p>An open-source, enterprise-ready application built from the ground up with security in mind. This project showcases my 360-degree approach. The Build (Blue): Designed for easy deployment with progressive system hardening and strict access control architectures. The Test (Red): Actively mitigated OWASP Top 10 vulnerabilities during the development phase. The Compliance (GRC): Ensured data integrity, traceability, and confidentiality through secure design principles.</p>
-      </div>
-      <div class="project-card wide">
-        <div class="project-header">
-          <h3>🛡️ Moodle Security Plugin</h3>
-          <span class="project-status">Deployed</span>
-        </div>
-        <p>Developed and successfully implemented a custom Captcha plugin to meet a genuine professional need, protecting organizational assets from automated abuse.</p>
-      </div>
+    <div class="project-tree">
+      <p class="tree-cmd"><span class="prompt">$</span> tree ~/projects</p>
+      <p class="tree-root">~/projects/</p>
+      <ul class="tree-list">
+        <li class="tree-item">
+          <button type="button" class="tree-entry" aria-expanded="true" aria-controls="proj-task-manager">
+            <span class="tree-marker" aria-hidden="true">▾</span>
+            <span class="tree-name">minimalist-task-manager/</span>
+            <span class="tree-kind">featured</span>
+            <span class="project-status">Active</span>
+          </button>
+          <div class="tree-panel-wrap" id="proj-task-manager">
+            <div class="tree-panel">
+              <p>An open-source, enterprise-ready application built from the ground up with security in mind. This project showcases my 360-degree approach.</p>
+              <ul class="pillars">
+                <li class="blue"><b>The Build (Blue)</b>Designed for easy deployment with progressive system hardening and strict access control architectures.</li>
+                <li class="red"><b>The Test (Red)</b>Actively mitigated OWASP Top 10 vulnerabilities during the development phase.</li>
+                <li class="grc"><b>The Compliance (GRC)</b>Ensured data integrity, traceability, and confidentiality through secure design principles.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="tree-item">
+          <button type="button" class="tree-entry" aria-expanded="false" aria-controls="proj-moodle">
+            <span class="tree-marker" aria-hidden="true">▸</span>
+            <span class="tree-name">moodle-security-plugin/</span>
+            <span class="tree-kind">plugin</span>
+            <span class="project-status">Deployed</span>
+          </button>
+          <div class="tree-panel-wrap" id="proj-moodle" hidden>
+            <div class="tree-panel">
+              <p>Developed and successfully implemented a custom Captcha plugin to meet a genuine professional need, protecting organizational assets from automated abuse.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 </div>
@@ -33,3 +54,5 @@ permalink: /projects/
     <p>&copy; 2025 Rubenelcurioso | Building the future, one line of code at a time</p>
   </div>
 </footer>
+
+<script src="/assets/js/project-tree.js"></script>
