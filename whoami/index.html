@@ -12,6 +12,12 @@ permalink: /whoami/
     <figure class="roadmap" id="roadmap-chart" tabindex="0" aria-label="Knowledge roadmap chart (scrollable on small screens)">
       <svg viewBox="0 -30 900 570" role="img" aria-labelledby="roadmap-title roadmap-desc">
         <title id="roadmap-title">Knowledge over time</title>
+        <defs>
+          <linearGradient id="rm-handoff" gradientUnits="userSpaceOnUse" x1="490" y1="215" x2="560" y2="170">
+            <stop offset="0" class="rm-stop-done" />
+            <stop offset="1" class="rm-stop-goal" />
+          </linearGradient>
+        </defs>
         <desc id="roadmap-desc">Knowledge grows from 2020, through university fundamentals (2024) and infrastructure security (2026), up to the current role: SOC Analyst L1. The next goal is DFIR and the final goal is Malware Analyst.</desc>
         <!-- X axis -->
         <path class="rm-axis rm-xaxis" pathLength="1" d="M70 450 H860 M850 444 L860 450 L850 456" />
@@ -57,16 +63,16 @@ permalink: /whoami/
         <path class="rm-line rm-done s3" pathLength="1" d="M420 305 C 440 290, 475 285, 490 215" />
 
         <!-- Goals path: faint track + a line being drawn towards DFIR and Malware Analyst -->
-        <path class="rm-goal-track rm-goals" d="M490 215 C 540 180, 590 190, 650 130 C 720 70, 760 90, 810 62" />
+        <path class="rm-goal-track rm-goals" d="M490 215 C 497 180, 580 190, 650 130 C 720 70, 760 90, 810 62" />
         <path class="rm-goal-draw rm-goals" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"
-              d="M490 215 C 540 180, 590 190, 650 130 C 720 70, 760 90, 810 62">
+              d="M490 215 C 497 180, 580 190, 650 130 C 720 70, 760 90, 810 62">
           <animate id="rm-goal-anim" attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.75;1"
                    dur="5s" begin="indefinite" repeatCount="indefinite" />
           <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.88;1"
                    dur="5s" begin="rm-goal-anim.begin" repeatCount="indefinite" />
         </path>
         <circle class="rm-pen" r="5" cx="0" cy="0" opacity="0">
-          <animateMotion path="M490 215 C 540 180, 590 190, 650 130 C 720 70, 760 90, 810 62"
+          <animateMotion path="M490 215 C 497 180, 580 190, 650 130 C 720 70, 760 90, 810 62"
                          keyPoints="0;1;1" keyTimes="0;0.75;1" calcMode="linear"
                          dur="5s" begin="rm-goal-anim.begin" repeatCount="indefinite" />
           <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.75;0.8;1"
@@ -90,11 +96,34 @@ permalink: /whoami/
         <text class="rm-tag t3" x="466" y="186" text-anchor="end">SOC Analyst L1</text>
 
         <!-- Next goal -->
-        <g class="rm-goal-node n4" transform="translate(650 130)">
-          <rect class="rm-diamond rm-next" x="-17" y="-17" width="34" height="34" transform="rotate(45)" />
+        <g class="rm-goal-node rm-lens n4" transform="translate(628 108)" aria-hidden="true">
+          <circle class="rm-lens-glass" cx="18" cy="18" r="14" />
+          <g class="px-lens">
+            <rect x="8" y="0" width="20" height="4" />
+            <rect x="4" y="4" width="4" height="4" />
+            <rect x="28" y="4" width="4" height="4" />
+            <rect x="0" y="8" width="4" height="4" />
+            <rect x="12" y="8" width="8" height="4" />
+            <rect x="32" y="8" width="4" height="4" />
+            <rect x="0" y="12" width="4" height="4" />
+            <rect x="8" y="12" width="4" height="4" />
+            <rect x="32" y="12" width="4" height="4" />
+            <rect x="0" y="16" width="4" height="4" />
+            <rect x="32" y="16" width="4" height="4" />
+            <rect x="0" y="20" width="4" height="4" />
+            <rect x="32" y="20" width="4" height="4" />
+            <rect x="0" y="24" width="4" height="4" />
+            <rect x="32" y="24" width="4" height="4" />
+            <rect x="4" y="28" width="4" height="4" />
+            <rect x="28" y="28" width="8" height="4" />
+            <rect x="8" y="32" width="20" height="4" />
+            <rect x="32" y="32" width="8" height="4" />
+            <rect x="28" y="36" width="16" height="4" />
+            <rect x="32" y="40" width="12" height="4" />
+          </g>
         </g>
-        <text class="rm-sub t4" x="630" y="84" text-anchor="end">next goal</text>
-        <text class="rm-tag rm-tag-goal t4" x="630" y="104" text-anchor="end">DFIR</text>
+        <text class="rm-sub t4" x="618" y="84" text-anchor="end">next goal</text>
+        <text class="rm-tag rm-tag-goal t4" x="618" y="104" text-anchor="end">DFIR</text>
 
         <!-- Final goal -->
         <g class="rm-goal-node rm-spider n5" transform="translate(788 42)" aria-hidden="true">

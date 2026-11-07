@@ -472,7 +472,10 @@ h1, h2, h3, h4 { font-weight: 700; }
 .roadmap {
   margin: 0 auto; max-width: 1000px;
   overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch;
+  --rm-danger: #e5484d;
 }
+:root[data-theme="paper"] .roadmap { --rm-danger: #c42b31; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="night"]) .roadmap { --rm-danger: #c42b31; } }
 .roadmap:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 4px; }
 .roadmap svg { width: 100%; min-width: 560px; height: auto; display: block; font-family: var(--font-mono); }
 
@@ -483,8 +486,12 @@ h1, h2, h3, h4 { font-weight: 700; }
 .rm-uni-label { fill: var(--phosphor); font-size: 15px; }
 .rm-line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
 .rm-line.rm-done { stroke: var(--phosphor); }
-.rm-goal-track { fill: none; stroke: var(--signal); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; opacity: .45; }
-.rm-goal-draw { fill: none; stroke: var(--signal); stroke-width: 3; stroke-linecap: round; }
+.rm-goal-track { fill: none; stroke: url(#rm-handoff); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; opacity: .45; }
+.rm-goal-draw { fill: none; stroke: url(#rm-handoff); stroke-width: 3; stroke-linecap: butt; }
+/* Seamless hand-off at Current: same tangent, butt caps, green fading into yellow */
+.rm-line.s3 { stroke-linecap: butt; }
+.rm-stop-done { stop-color: var(--phosphor); }
+.rm-stop-goal { stop-color: var(--signal); }
 .rm-pen { fill: var(--signal); filter: drop-shadow(0 0 6px var(--signal)); }
 .rm-node.rm-done { fill: var(--phosphor-30); stroke: var(--phosphor); stroke-width: 2; }
 .rm-node.n1, .rm-node.n2 { stroke-dasharray: 3 2.5; }
@@ -495,22 +502,26 @@ h1, h2, h3, h4 { font-weight: 700; }
 }
 .rm-tag { fill: var(--signal); font-size: 15px; }
 .rm-tag-current, .rm-tag-goal { font-weight: bold; }
-.rm-tag-final { fill: var(--phosphor); }
+.rm-tag-final { fill: var(--rm-danger); }
 .rm-sub { fill: var(--ink-muted); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 
 .rm-blink { fill: var(--phosphor-40); stroke: var(--phosphor); stroke-width: 2.5; animation: rm-blink 1.1s ease-in-out infinite; }
 .rm-pulse { fill: none; stroke: var(--phosphor); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: rm-pulse 1.8s ease-out infinite; }
-.rm-diamond { stroke-width: 2.5; stroke-linejoin: round; }
-.rm-diamond.rm-next { fill: var(--surface); stroke: var(--signal); stroke-dasharray: 5 4; }
 
 /* Pixel sprites (rocket + spider): monochrome phosphor, Fallout terminal style */
-.rm-rocket rect, .rm-spider rect { shape-rendering: crispEdges; }
+.rm-rocket rect, .rm-spider rect, .rm-lens rect { shape-rendering: crispEdges; }
 .px rect { fill: var(--phosphor); }
 .rm-rocket { filter: drop-shadow(0 0 4px var(--phosphor)); }
 .px-flame rect { fill: var(--phosphor); opacity: .55; }
 .px-flame-a { animation: rm-flame 0.24s steps(1) infinite; }
 .px-flame-b { animation: rm-flame 0.24s steps(1) infinite reverse; }
-.rm-spider { filter: drop-shadow(0 0 6px var(--phosphor)) drop-shadow(0 0 14px var(--phosphor-40)); }
+.rm-spider .px rect { fill: var(--rm-danger); }
+.rm-spider { filter: drop-shadow(0 0 6px var(--rm-danger)) drop-shadow(0 0 14px var(--rm-danger)); }
+.px-lens rect { fill: var(--signal); }
+.rm-lens-glass { fill: var(--ground); stroke: none; }
+.rm-lens { filter: drop-shadow(0 0 5px var(--signal)); }
+.rm-lens .px-lens { animation: rm-scan 1.6s steps(1) infinite; }
+@keyframes rm-scan { 0% { transform: translate(0, 0); } 50% { transform: translate(2px, 0); } }
 .rm-spider .px { animation: rm-crawl 0.9s steps(1) infinite; }
 @keyframes rm-crawl { 0% { transform: translate(0, 0); } 50% { transform: translate(0, -2px); } }
 
@@ -548,7 +559,7 @@ h1, h2, h3, h4 { font-weight: 700; }
 .roadmap.in .n5, .roadmap.in .t5 { transition-delay: 4.6s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .rm-blink, .rm-pulse, .px-flame-a, .px-flame-b, .rm-spider .px { animation: none; }
+  .rm-blink, .rm-pulse, .px-flame-a, .px-flame-b, .rm-spider .px, .rm-lens .px-lens { animation: none; }
   html { scroll-behavior: auto; }
   .typing { animation: none; }
   * { transition: none !important; }
